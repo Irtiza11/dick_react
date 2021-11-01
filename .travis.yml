@@ -16,7 +16,6 @@ deploy:
   app: "dock_react"
   env: "Dockreact-env"
   bucket_name: "elasticbeanstalk-us-east-2-290918986524"
-  # for the first time, before any deploy bucket_path will be name of the app
   bucket_path: "dock_react"
   on:
     branch: master
