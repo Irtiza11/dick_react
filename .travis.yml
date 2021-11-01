@@ -9,3 +9,16 @@ before_install:
 
 script:
   - docker run -e CI=true irtiza/dock_react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "dock_react"
+  env: "Dockreact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-290918986524"
+  # for the first time, before any deploy bucket_path will be name of the app
+  bucket_path: "dock_react"
+  on:
+    branch: master
+  access_key_id : $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
