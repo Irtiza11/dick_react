@@ -1,8 +1,8 @@
 sudo: required
+language: generic
+
 services:
   - docker
-
-if: branch = master
 
 before_install:
   - docker build -t irtiza/dock_react -f Dockerfile.dev . 
